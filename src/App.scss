@@ -1,0 +1,185 @@
+$color: red;
+body, html{
+  height: 100%;
+  background:$color
+}
+#root {
+  height: 100%;
+  background: #f1f1f1
+}
+.wrapper {
+  height: 100% !important
+}
+.banner {
+  background:#563d7c;
+}
+.fullheight {
+  height: 100%
+}
+.info {
+  color: #ccc;
+  padding:60px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%)
+}
+
+.info h3 {
+  line-height: 60px;
+  font-weight: 900;
+  letter-spacing: 1.2vh;
+  font-size:1.9em
+}
+
+.info p {
+  font-size:1.1em;
+  line-height:3.4vh;
+  font-family: Arial, Helvetica, sans-serif
+}
+
+.form-signin {
+  width:450px;
+  max-width: 100%;
+  position: relative;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form-signin > form {
+  border:1px solid rgba(121, 182, 243, 0.3);
+  box-shadow: 0px 0px 4px rgb(121, 182, 243);
+  padding:20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-radius: 5px;
+  animation: formEnter 0.3s ease-in-out 1;
+  background: #fff
+}
+
+.input-group-append button{
+  background: transparent;
+  border:0;
+  color:rgb(121, 182, 243);
+}
+
+.input-group-append button:focus{
+  outline: 0;
+  color:rgb(14, 82, 151);
+}
+.form-signin h3 {
+  color: rgb(71, 82, 94);
+  font-weight: 600;
+  font-size: 1.4em
+}
+
+.form-signin label {
+  color:#563d7c;
+  font-weight: 300;
+  position: relative;
+  transform:translate(5px, 10px)
+}
+
+.form-signin .input-group-append {
+  border-bottom:1px solid #ccc;
+}
+.form-signin .form-control{
+  border:0px;
+  border-bottom:1px solid #ccc;
+  border-radius: 0
+}
+
+.form-signin .form-control:focus {
+  box-shadow:none;
+  border-color: transparent;
+  border-bottom-color: #ccc;
+}
+.btn-outline-primary {
+  color: #563d7c !important;
+  border-color: #563d7c !important;
+}
+
+.btn-outline-primary:hover {
+  color: #fff !important;
+  background-color:#563d7c !important;
+  border-color: #563d7c !important;
+}
+.form-signin .terms{
+  font-size: 12px;
+  color:#a0a0a0;
+  font-weight: 600
+}
+
+@keyframes formEnter {
+  0%{
+    transform:scale(0)
+  }
+  90%{
+    transform:scale(1.2)
+  }
+  100%{
+    transform:scale(1)
+  }
+}
+
+.tooltip-inner{
+  background: #563d7c !important;
+  color: #aaa !important
+}
+
+.tooltip-inner strong{
+  color: gold
+}
+
+#blank {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(121, 182, 243, 0.1);
+  z-index: 9999990;
+  display: none
+}
+
+#roller {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border:5px solid #ccc;
+  border-bottom: 5px solid #563d7c;
+  border-top: 5px solid #563d7c;
+  position: relative;
+  top:50%;
+  left:49.5%;
+  transform:translate(-60%, -50%);
+  animation:roller 1.5s normal infinite
+}
+
+@keyframes roller{
+  0%{
+    transform: rotateZ(0deg)
+  }
+  
+  100% {
+    transform: rotateZ(360deg)
+  }
+}
+
+.table th {
+  color: #563d7c;
+  font-weight: 800
+}
+.table td {
+  font-size: 14px;
+  color: #563d7c
+}
+
+.table tbody > tr:nth-child(odd) {
+  background: linear-gradient(0deg, #fafafa, #fff, #fafafa);
+  box-shadow: 0px 4px 5px #f1f1f1
+}
+
+.table tbody > tr:hover {
+  background: #f1f1f1;
+}
