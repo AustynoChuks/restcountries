@@ -3,14 +3,33 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
 import { FetchCountry } from '../redux/action'
 import { FaLongArrowAltLeft} from 'react-icons/fa'
+import { moneyFormat } from '../lib'
 class Country extends React.Component {
     constructor(props){
         super(props)
+        this.state = {
+            country_code: this.props.match.params.id
+        }
+    }
+
+    getCountry = ()=>{
+        this.props.getCountry(this.state.country_code)
     }
 
     componentDidMount(){
-        this.props.getCountry(this.props.match.params.id)
+        this.getCountry()
     }
+
+    componentWillReceiveProps(props){
+        const id = props.match?.params?.id
+        if(this.state.country_code != id){
+            this.setState({
+                country_code:id
+            }, this.getCountry)
+        }
+    }
+
+    compo
     render() {
         let { country, isFetchingSingle } = this.props;
         if (isFetchingSingle) {
@@ -48,7 +67,7 @@ class Country extends React.Component {
                                 </div>
                                 <div className="label">
                                     <b>Population: </b>
-                                    <span>{country.population}</span>
+                                    <span>{moneyFormat(country.population).replace(/\.(0){2}$/, '')}</span>
                                 </div>
                                 <div className="label">
                                     <b>Region: </b>
@@ -86,9 +105,11 @@ class Country extends React.Component {
 
                             <div className="col-1">
                                 <div className="label">
-                                    <b>Border Countries: </b> {country.borders.map((border, i) => <a href={`/country/${border}`} className="badge">
+                                    <b>Border Countries: </b> {country.borders.map((border, i) => <Link onClick={()=>{
+                                        this.props.history.push(`/country/${border}`)
+                                    }} className="badge">
                                         {border}
-                                    </a>)}
+                                    </Link>)}
                                 </div> 
                             </div>
                         </div>
